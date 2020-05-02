@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { ViroARSceneNavigator } from 'react-viro';
 
-const ARNavigator = ({ scene }) => {
+import { getScene } from '../../services/api';
+
+const ARNavigator = ({ route }) => {
+  const scene = useMemo(() => {
+    const { productId } = route.params;
+
+    return getScene({ productId });
+  }, [route.params, getScene]);
+
   return <ViroARSceneNavigator initialScene={{ scene }} />;
 };
 

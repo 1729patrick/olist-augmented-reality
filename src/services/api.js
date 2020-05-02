@@ -1,6 +1,7 @@
 import CarScene from '../scenes/Car';
 import TVScene from '../scenes/TV';
 import TableScene from '../scenes/Table';
+import Watch from '../scenes/Watch';
 
 export const products = [
   {
@@ -22,6 +23,13 @@ export const products = [
     image: require('../assets/wood-table.jpg'),
     scene: TableScene,
     title: 'Mesa de Madeira',
+    description: '',
+  },
+  {
+    productId: 4,
+    image: require('../assets/watch.jpg'),
+    scene: Watch,
+    title: 'Relógio',
     description: '',
   },
 ];

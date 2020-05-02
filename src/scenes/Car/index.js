@@ -1,35 +1,17 @@
-import React, { Component } from 'react';
-
-import { StyleSheet } from 'react-native';
+import React from 'react';
 
 import {
   ViroARScene,
   ViroMaterials,
   ViroNode,
-  ViroAnimations,
   Viro3DObject,
   ViroLightingEnvironment,
-  ViroSphere,
   ViroSpotLight,
-  ViroQuad,
 } from 'react-viro';
 
 const createReactClass = require('create-react-class');
 
 const CarScene = createReactClass({
-  getInitialState() {
-    return {
-      texture: 'white',
-      playAnim: true,
-      animateCar: true,
-      tapWhite: false,
-      tapBlue: false,
-      tapGrey: false,
-      tapRed: false,
-      tapYellow: false,
-    };
-  },
-
   render() {
     return (
       <ViroARScene>
@@ -40,7 +22,7 @@ const CarScene = createReactClass({
           onDrag={() => {}}>
           <Viro3DObject
             source={require('./res/object_car.obj')}
-            position={[0, 0.1, 0]}
+            position={[0, 0, 0]}
             scale={[0.2, 0.2, 0.2]}
             type="OBJ"
             resources={[require('./res/object_car.mtl')]}

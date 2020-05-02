@@ -1,51 +1,33 @@
-import React, { Component } from 'react';
-
-import { StyleSheet } from 'react-native';
+import React from 'react';
 
 import {
   ViroARScene,
   ViroMaterials,
   ViroNode,
-  ViroAnimations,
   Viro3DObject,
-  ViroLightingEnvironment,
-  ViroSphere,
   ViroSpotLight,
-  ViroQuad,
-  ViroDirectionalLight,
+  ViroAmbientLight,
 } from 'react-viro';
 
 const createReactClass = require('create-react-class');
 
 const TVScene = createReactClass({
-  getInitialState() {
-    return {
-      texture: 'white',
-      playAnim: true,
-      animateCar: true,
-      tapWhite: false,
-      tapBlue: false,
-      tapGrey: false,
-      tapRed: false,
-      tapYellow: false,
-    };
-  },
-
   render() {
     return (
       <ViroARScene>
-        <ViroDirectionalLight color="#aaaaaa" direction={[0, 0, -1.0]} />
+        <ViroAmbientLight color="#aaaaaa" influenceBitMask={1} />
 
         <ViroSpotLight
           innerAngle={5}
-          outerAngle={25}
-          direction={[0, 0, -1]}
-          position={[0, 5, 1]}
+          outerAngle={45}
+          direction={[0, -1, -0.2]}
+          position={[0, 3, 0]}
           color="#ffffff"
           castsShadow
+          influenceBitMask={4}
           shadowMapSize={2048}
           shadowNearZ={2}
-          shadowFarZ={7}
+          shadowFarZ={5}
           shadowOpacity={0.7}
         />
 
@@ -55,8 +37,8 @@ const TVScene = createReactClass({
           onDrag={() => {}}>
           <Viro3DObject
             source={require('./res/tv.obj')}
-            position={[0, 0.1, 0]}
-            scale={[0.2, 0.2, 0.2]}
+            position={[0, 0, 0]}
+            scale={[0.1, 0.1, 0.1]}
             type="OBJ"
             resources={[
               require('./res/tv_diffuse.png'),

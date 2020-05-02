@@ -30,7 +30,6 @@ const Products = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#eaeaea',
-    padding: 10,
     elevation: 10,
     flex: 1,
   },
@@ -38,7 +37,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 6,
     marginVertical: 5,
-    width: '100%',
+    marginHorizontal: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 6,
   },
   image: {
     height: 200,
@@ -48,6 +55,7 @@ const styles = StyleSheet.create({
   title: {
     paddingVertical: 10,
     paddingLeft: 5,
+    color: '#000',
   },
 });
 

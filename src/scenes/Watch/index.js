@@ -3,7 +3,6 @@ import React from 'react';
 import {
   ViroARScene,
   ViroMaterials,
-  ViroNode,
   ViroSpotLight,
   ViroAmbientLight,
   Viro3DObject,
@@ -17,21 +16,14 @@ const createReactClass = require('create-react-class');
 const WatchScene = createReactClass({
   getInitialState() {
     return {
-      texture: 'white',
-      playAnim: false,
-      animateCar: false,
-      tapWhite: false,
-      tapBlue: false,
-      tapGrey: false,
-      tapRed: false,
-      tapYellow: false,
+      animate: false,
     };
   },
   render() {
     return (
       <ViroARScene>
         <ViroARImageMarker
-          target="logo"
+          target="target"
           onAnchorFound={this._onAnchorFound}
           pauseUpdates={this.state.pauseUpdates}>
           <ViroAmbientLight color="#aaaaaa" influenceBitMask={1} />
@@ -52,15 +44,14 @@ const WatchScene = createReactClass({
 
           <Viro3DObject
             source={require('./res/DigitalWatch_v1_Iteration2.obj')}
-            scale={[0.01, 0.01, 0.01]}
-            rotation={[180, 45, 0]}
+            rotation={[180, 135, 0]}
             type="OBJ"
             resources={[
               require('./res/DigitalWatch_v1_Iteration2.mtl'),
               require('./res/DigitalWatch_v1_Diffuse.jpg'),
             ]}
             materials="watch"
-            animation={{ name: 'scaleCar', run: this.state.animateCar }}
+            animation={{ name: 'scale', run: this.state.animate }}
           />
         </ViroARImageMarker>
       </ViroARScene>
@@ -68,7 +59,7 @@ const WatchScene = createReactClass({
   },
   _onAnchorFound() {
     this.setState({
-      animateCar: true,
+      animate: true,
     });
   },
 });
@@ -82,36 +73,23 @@ ViroMaterials.createMaterials({
 });
 
 ViroARTrackingTargets.createTargets({
-  logo: {
+  target: {
     source: require('./res/target.jpg'),
     orientation: 'Right',
-    physicalWidth: 0.1, // real world width in meters
+    physicalWidth: 0.1,
   },
 });
 
 ViroAnimations.registerAnimations({
-  scaleUp: {
-    properties: { scaleX: 1, scaleY: 1, scaleZ: 1 },
+  scale: {
+    properties: {
+      scaleX: 0.005,
+      scaleY: 0.005,
+      scaleZ: 0.005,
+    },
     duration: 500,
     easing: 'bounce',
   },
-  scaleDown: { properties: { scaleX: 0, scaleY: 0, scaleZ: 0 }, duration: 200 },
-  scaleCar: {
-    properties: { scaleX: 0.01, scaleY: 0.01, scaleZ: 0.01 },
-    duration: 500,
-    easing: 'bounce',
-  },
-  scaleSphereUp: {
-    properties: { scaleX: 0.8, scaleY: 0.8, scaleZ: 0.8 },
-    duration: 50,
-    easing: 'easeineaseout',
-  },
-  scaleSphereDown: {
-    properties: { scaleX: 1, scaleY: 1, scaleZ: 1 },
-    duration: 50,
-    easing: 'easeineaseout',
-  },
-  tapAnimation: [['scaleSphereUp', 'scaleSphereDown']],
 });
 
 module.exports = WatchScene;

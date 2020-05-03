@@ -15,17 +15,19 @@ const CarScene = createReactClass({
   render() {
     return (
       <ViroARScene>
-        <ViroLightingEnvironment source={require('./res/garage_1k.hdr')} />
+        <ViroLightingEnvironment
+          source={require('../../assets/objects/car/garage_1k.hdr')}
+        />
         <ViroNode
           position={[0, -1, -7]}
           dragType="FixedToWorld"
           onDrag={() => {}}>
           <Viro3DObject
-            source={require('./res/object_car.obj')}
+            source={require('../../assets/objects/car/object_car.obj')}
             position={[0, 0, 0]}
             scale={[1, 1, 1]}
             type="OBJ"
-            resources={[require('./res/object_car.mtl')]}
+            resources={[require('../../assets/objects/car/object_car_m.mtl')]}
             materials="white"
           />
         </ViroNode>
@@ -50,9 +52,9 @@ const CarScene = createReactClass({
 ViroMaterials.createMaterials({
   white: {
     lightingModel: 'PBR',
-    diffuseTexture: require('./res/object_car_main_Base_Color.png'),
-    metalnessTexture: require('./res/object_car_main_Metallic.png'),
-    roughnessTexture: require('./res/object_car_main_Roughness.png'),
+    diffuseTexture: require('../../assets/objects/car/object_car_main_Base_Color.png'),
+    metalnessTexture: require('../../assets/objects/car/object_car_main_Metallic.png'),
+    roughnessTexture: require('../../assets/objects/car/object_car_main_Roughness.png'),
   },
 });
 

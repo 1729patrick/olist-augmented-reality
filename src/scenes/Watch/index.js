@@ -43,12 +43,12 @@ const WatchScene = createReactClass({
           />
 
           <Viro3DObject
-            source={require('./res/DigitalWatch_v1_Iteration2.obj')}
+            source={require('../../assets/objects/watch/DigitalWatch_v1_Iteration2.obj')}
             rotation={[180, 135, 0]}
             type="OBJ"
             resources={[
-              require('./res/DigitalWatch_v1_Iteration2.mtl'),
-              require('./res/DigitalWatch_v1_Diffuse.jpg'),
+              require('../../assets/objects/watch/DigitalWatch_v1_Iteration2_m.mtl'),
+              require('../../assets/objects/watch/DigitalWatch_v1_Diffuse.jpg'),
             ]}
             materials="watch"
             animation={{ name: 'scale', run: this.state.animate }}
@@ -68,13 +68,13 @@ ViroMaterials.createMaterials({
   watch: {
     shininess: 2.0,
     lightingModel: 'Blinn',
-    diffuseTexture: require('./res/DigitalWatch_v1_Diffuse.jpg'),
+    diffuseTexture: require('../../assets/objects/watch/DigitalWatch_v1_Diffuse.jpg'),
   },
 });
 
 ViroARTrackingTargets.createTargets({
   target: {
-    source: require('./res/target.jpg'),
+    source: require('../../assets/objects/watch/target.jpg'),
     orientation: 'Right',
     physicalWidth: 0.1,
   },

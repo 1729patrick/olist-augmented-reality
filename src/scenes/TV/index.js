@@ -36,13 +36,13 @@ const TVScene = createReactClass({
           dragType="FixedToWorld"
           onDrag={() => {}}>
           <Viro3DObject
-            source={require('./res/tv.obj')}
+            source={require('../../assets/objects/tv/tv.obj')}
             position={[0, 0, 0]}
             scale={[0.1, 0.1, 0.1]}
             type="OBJ"
             resources={[
-              require('./res/tv_diffuse.png'),
-              require('./res/tv_specular.png'),
+              require('../../assets/objects/tv/tv_diffuse.png'),
+              require('../../assets/objects/tv/tv_specular.png'),
             ]}
             materials="tv"
           />
@@ -56,8 +56,8 @@ ViroMaterials.createMaterials({
   tv: {
     shininess: 2.0,
     lightingModel: 'Blinn',
-    diffuseTexture: require('./res/tv_diffuse.png'),
-    specularTexture: require('./res/tv_specular.png'),
+    diffuseTexture: require('../../assets/objects/tv/tv_diffuse.png'),
+    specularTexture: require('../../assets/objects/tv/tv_specular.png'),
   },
 });
 

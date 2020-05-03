@@ -35,11 +35,11 @@ const TableScene = createReactClass({
           dragType="FixedToWorld"
           onDrag={() => {}}>
           <Viro3DObject
-            source={require('./res/Wood_Table.obj')}
+            source={require('../../assets/objects/table/Wood_Table.obj')}
             position={[0, 0, 0]}
             scale={[0.7, 0.7, 0.7]}
             type="OBJ"
-            resources={[require('./res/Wood_Table.mtl')]}
+            resources={[require('../../assets/objects/table/Wood_Table_m.mtl')]}
             materials="table"
           />
         </ViroNode>
@@ -51,9 +51,9 @@ const TableScene = createReactClass({
 ViroMaterials.createMaterials({
   table: {
     lightingModel: 'PBR',
-    diffuseTexture: require('./res/Wood_Table_C_2.jpg'),
-    metalnessTexture: require('./res/Wood_Table_C.jpg'),
-    roughnessTexture: require('./res/Wood_Table_N.jpg'),
+    diffuseTexture: require('../../assets/objects/table/Wood_Table_C_2.jpg'),
+    metalnessTexture: require('../../assets/objects/table/Wood_Table_C.jpg'),
+    roughnessTexture: require('../../assets/objects/table/Wood_Table_N.jpg'),
   },
 });
 

@@ -6,28 +6,28 @@ import Watch from '../scenes/Watch';
 export const products = [
   {
     productId: 1,
-    image: require('../assets/car.jpg'),
+    image: require('../assets/products/car.jpg'),
     scene: CarScene,
     title: 'TESLA MODEL X',
     description: '',
   },
   {
     productId: 2,
-    image: require('../assets/tv.jpg'),
+    image: require('../assets/products/tv.jpg'),
     scene: TVScene,
     title: 'TV SAMSUNG 55"',
     description: '',
   },
   {
     productId: 3,
-    image: require('../assets/wood-table.jpg'),
+    image: require('../assets/products/wood-table.jpg'),
     scene: TableScene,
     title: 'MESA DE MADEIRA',
     description: '',
   },
   {
     productId: 4,
-    image: require('../assets/watch.jpg'),
+    image: require('../assets/products/watch.jpg'),
     scene: Watch,
     title: 'RELÓGIO ROLEX',
     description: '',

@@ -17,13 +17,13 @@ const CarScene = createReactClass({
       <ViroARScene>
         <ViroLightingEnvironment source={require('./res/garage_1k.hdr')} />
         <ViroNode
-          position={[0, 0, -1]}
+          position={[0, -1, -7]}
           dragType="FixedToWorld"
           onDrag={() => {}}>
           <Viro3DObject
             source={require('./res/object_car.obj')}
             position={[0, 0, 0]}
-            scale={[0.2, 0.2, 0.2]}
+            scale={[1, 1, 1]}
             type="OBJ"
             resources={[require('./res/object_car.mtl')]}
             materials="white"

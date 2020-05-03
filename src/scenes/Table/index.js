@@ -31,7 +31,7 @@ const TableScene = createReactClass({
           shadowOpacity={0.7}
         />
         <ViroNode
-          position={[0, 0, -1]}
+          position={[0, -1, -1]}
           dragType="FixedToWorld"
           onDrag={() => {}}>
           <Viro3DObject

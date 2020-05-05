@@ -7,24 +7,24 @@
 |        Carro         |     Mesa      |         TV         |         Relógio          |
   
 
-## Locais de funcionamento
+## 1. Funcionamento
 
-Carro - Ambiente físico
-Mesa - Ambiente físico
-TV - Ambiente físico
-Relógio - Detecção de corpo humano
+- Carro - Ambiente físico
+- Mesa - Ambiente físico
+- TV - Ambiente físico
+- Relógio - Detecção de corpo humano
+
+## 2. Execução
+Download do APK `https://github.com/patrickbattisti/olist-augmented-reality/blob/master/olist-ar.apk` ou realização das seções <b>3. Configuração</b> e <b>4. Instalação  (Android)</b>.
 
 
-## Configuração
+## 3. Configuração
 
-1. `git clone https://github.com/patrickbattisti/olist-augmented-reality.git`
+`git clone https://github.com/patrickbattisti/olist-augmented-reality.git`
 
-2. `npm install` ou `yarn`
+`npm install` ou `yarn`
 
-## Instalação
+## 4. Instalação  (Android)
 
 `npm run android` ou `yarn android`
 
-ou
-
-Download do APK `https://github.com/patrickbattisti/olist-augmented-reality/blob/master/olist-ar.apk` (apenas Android)
